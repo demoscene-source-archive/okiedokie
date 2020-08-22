@@ -1,0 +1,337 @@
+#start=1
+#framenum=-2147483648
+#mange=1047483647
+
+/ Switches
+#sw_start=0
+#sw_pic1fade=1
+#sw_vec1=2
+#sw_kasw=3
+#sw_cylt=4
+#sw_part=5
+#sw_picture2=6
+#sw_pic2fade0=7
+#sw_pic2fade1=8
+#sw_scro=9
+#sw_blank=10
+#sw_s_b1=11
+#sw_s_b2=12
+#sw_puls=13
+#sw_wire=14
+#sw_blob=15
+#sw_spic1=16
+#sw_spol=17
+#sw_credon=18
+#sw_vecspd=22
+#sw_vecacc=23
+#sw_credval=24
+#sw_credend=25
+#sw_credspd=26
+#sw_kaswfadeval=27
+#sw_kaswfadeend=28
+#sw_kaswfadespd=29
+#sw_vecfadeval=30
+#sw_vecfadeend=31
+#sw_vecfadespd=32
+#sw_cyloffset=33
+#sw_weknows=34
+#sw_blobradial=35
+#sw_blobfadeval=36
+#sw_blobfadeend=37
+#sw_blobfadespd=38
+#sw_cylfadeval=39
+#sw_wirezoom=40
+#sw_wirerotx=41
+#sw_wireroty=42
+#sw_wirerotz=43
+#sw_kaswflashcol=44
+#sw_ok=45
+#sw_okfadeval=46
+#sw_okfadeend=47
+#sw_okfadespd=48
+#sw_okfadecol=49
+#sw_kaswr=50
+#sw_kaswg=51
+#sw_kaswb=52
+#sw_meta=53
+#sw_metaspd=54
+#sw_metaud=55
+#sw_metafadeval=56
+#sw_metafadeend=57
+#sw_metafadespd=58
+#sw_blobgfx=59
+
+
+/ Patterns
+#startpattern=0
+#wirepattern=2
+#pulspattern=4
+#blobpattern=6
+#swappattern=7
+#cyltpattern=9
+#vec1pattern=11
+#metapattern=14
+#kaswpattern=16
+
+%0,0,sw_start,start
+
+/------ START-SCROLLER -----------------
+%startpattern+0,          0,      sw_spic1,   1
+%startpattern+2,          0,      sw_spic1,   0
+
+/------ WIRE CREDITS PARTEN -----------------
+%wirepattern+0,          0,      sw_wire,   1
+
+%wirepattern+0,          0,      sw_wirerotx,   20
+%wirepattern+0,          0,      sw_wireroty,   20
+%wirepattern+0,          0,      sw_wirerotz,   20
+
+%wirepattern+0,          4,      sw_wirerotx,   -10
+%wirepattern+0,          4,      sw_wireroty,   10
+%wirepattern+0,          4,      sw_wirerotz,   -30
+
+%wirepattern+0,          12,      sw_wirerotx,   30
+%wirepattern+0,          12,      sw_wireroty,   20
+%wirepattern+0,          12,      sw_wirerotz,   -10
+
+%wirepattern+0,          20,      sw_wirerotx,   8
+%wirepattern+0,          20,      sw_wireroty,   -25
+%wirepattern+0,          20,      sw_wirerotz,   10
+
+%wirepattern+0,          28,      sw_wirerotx,   9
+%wirepattern+0,          28,      sw_wireroty,   20
+%wirepattern+0,          28,      sw_wirerotz,   30
+
+%wirepattern+0,          36,      sw_wirerotx,   -10
+%0,                       0,      sw_wireroty,   5
+%0,                       0,      sw_wirerotz,   -30
+
+%wirepattern+0,          44,      sw_wirerotx,   -20
+%0,                       0,      sw_wireroty,   -10
+%0,                       0,      sw_wirerotz,   10
+
+%wirepattern+0,          52,      sw_wirerotx,   30
+%0,                       0,      sw_wireroty,   -10
+%0,                       0,      sw_wirerotz,   18
+
+%wirepattern+0,          59,      sw_wirerotx,   40
+%0,                       0,      sw_wireroty,   -50
+%0,                       0,      sw_wirerotz,   -48
+
+%wirepattern+0,          62,      sw_wirerotx,   -40
+%0,                       0,      sw_wireroty,   0
+%0,                       0,      sw_wirerotz,   28
+
+%wirepattern+1,          0,     sw_credon, 1
+%wirepattern+1,          0,     sw_credval, 0
+%wirepattern+1,          0,     sw_credend, 255
+%wirepattern+1,          0,     sw_credspd, 15
+
+
+%wirepattern+1,          4,      sw_wirerotx,   10
+%wirepattern+1,          4,      sw_wireroty,   -40
+%wirepattern+1,          4,      sw_wirerotz,   0
+%wirepattern+1,          12,      sw_wirerotx,   0
+%wirepattern+1,          12,      sw_wireroty,   20
+%wirepattern+1,          12,      sw_wirerotz,   30
+%wirepattern+1,          20,      sw_wirerotx,   10
+%wirepattern+1,          20,      sw_wireroty,   0
+%wirepattern+1,          20,      sw_wirerotz,   40
+%wirepattern+1,          27,      sw_wirerotx,   -30
+%wirepattern+1,          27,      sw_wireroty,   10
+%wirepattern+1,          27,      sw_wirerotz,   -20
+%wirepattern+1,          30,      sw_wirerotx,   10
+%wirepattern+1,          30,      sw_wireroty,   0
+%wirepattern+1,          30,      sw_wirerotz,   20
+%wirepattern+1,          36,      sw_wirerotx,   -10
+%0,                       0,      sw_wireroty,   40
+%0,                       0,      sw_wirerotz,   -30
+%wirepattern+1,          44,      sw_wirerotx,   -10
+%0,                       0,      sw_wireroty,   -20
+%0,                       0,      sw_wirerotz,   10
+%wirepattern+1,          52,      sw_wirerotx,   30
+%0,                       0,      sw_wireroty,   -10
+%0,                       0,      sw_wirerotz,   -20
+
+%wirepattern+1,          55,     sw_credend, 0
+%wirepattern+1,          55,     sw_credspd, -25
+%wirepattern+1,          55,     sw_wirezoom,-40
+%wirepattern+1,          59,      sw_wirerotx,   -30
+%0,                       0,      sw_wireroty,   10
+%0,                       0,      sw_wirerotz,   20
+%wirepattern+1,          62,      sw_wirerotx,   10
+%0,                       0,      sw_wireroty,   -30
+%0,                       0,      sw_wirerotz,   -20
+%wirepattern+2,          0,     sw_credon, 0
+%wirepattern+2,          0,      sw_wire,   0
+
+/------ PùLSE -----------------
+
+%pulspattern+0,          0,      sw_puls,   1
+%pulspattern+2,          0,      sw_puls,   0
+
+/------ BLOB -----------------
+
+%blobpattern+0,          0,      sw_blobfadeval,   0
+%blobpattern+0,          0,      sw_blobfadeend,   255
+%blobpattern+0,          0,      sw_blobfadespd,   7
+%blobpattern+0,          0,      sw_blob,   1
+%blobpattern+0,          0,      sw_blobgfx,   1
+%blobpattern+1,          0,      sw_blobradial,   1
+%blobpattern+1,          0,      sw_blob,   0
+%0,                      0,      sw_blobgfx,   0
+
+/------ SKIFT MELLEM BLOB OG TUNNEL -----------------
+
+%swappattern+0,          0,      sw_cylfadeval,   255
+%0,                      0,      sw_blobgfx,   0
+%swappattern+0,          0,      sw_cylt,   1
+%swappattern+0,          0,      sw_blob,   0
+
+%swappattern+0,          13,      sw_blobgfx,   1
+%swappattern+0,          16,      sw_cylt,   0
+%swappattern+0,          16,      sw_blob,   1
+
+%swappattern+0,          32,      sw_cylt,   1
+%0,                      0,      sw_blobgfx,   0
+%swappattern+0,          32,      sw_blob,   0
+
+%swappattern+0,          45,      sw_blobgfx,   1
+%swappattern+0,          48,      sw_cylt,   0
+%swappattern+0,          48,      sw_blob,   1
+
+%swappattern+1,          0,      sw_cylt,   1
+%0,                      0,      sw_blobgfx,   0
+%swappattern+1,          0,      sw_blob,   0
+
+%swappattern+1,          13,      sw_blobgfx,   1
+%swappattern+1,          16,      sw_cylt,   0
+%swappattern+1,          16,      sw_blob,   1
+
+%swappattern+1,          32,      sw_cylt,   1
+%0,                      0,      sw_blobgfx,   0
+%swappattern+1,          32,      sw_blob,   0
+
+%swappattern+1,          45,      sw_blobgfx,   1
+%swappattern+1,          48,      sw_cylt,   0
+%swappattern+1,          48,      sw_blob,   1
+%swappattern+2,          0,      sw_cylt,   1
+%0,                      0,      sw_blobgfx,   0
+%swappattern+2,          0,      sw_blob,   0
+%0,                      0,      sw_blobgfx,   0
+
+
+/------ TUNNEL -----------------
+
+%cyltpattern+0,          0,      sw_cylt,   1
+%cyltpattern+0,          16,      sw_cyloffset,       -100
+%cyltpattern+1,          16,      sw_picture2,       1
+%cyltpattern+1,          16,      sw_pic2fade0,   mange
+%cyltpattern+1,          16,      sw_pic2fade1,   framenum
+%cyltpattern+1,          48,      sw_pic2fade0,   framenum
+%cyltpattern+1,          63,      sw_picture2,       0
+%cyltpattern+2,          0,      sw_cylt,   0
+
+/------ VEKTORSCENE -----------------
+%vec1pattern,          0,      sw_vec1,   1
+%vec1pattern,          0,      sw_vecfadeval,   255
+%vec1pattern,          0,      sw_vecfadeend,   255
+%vec1pattern,          0,      sw_vecfadespd,   -10
+
+%vec1pattern,          0,      sw_spol,   0
+
+%vec1pattern,          14,      sw_vecacc,   200
+%vec1pattern,          14,      sw_vecfadeend,   0
+%vec1pattern,          16,      sw_vecfadespd,   10
+%vec1pattern,          16,      sw_vecfadeend,   255
+%vec1pattern,          16,      sw_vecacc,   -200
+%vec1pattern,          17,      sw_vecacc,   0
+
+%vec1pattern,          32,      sw_vecfadespd,   15
+%vec1pattern,          32,      sw_vecspd,   100
+%vec1pattern,          32,      sw_spol,   810
+%0          ,           0,      sw_vecfadeval,   255
+%vec1pattern,          48,      sw_spol,   610
+%0          ,           0,      sw_vecfadeval,   255
+%vec1pattern+1,          0,      sw_spol,   410
+%0          ,           0,      sw_vecfadeval,   255
+%vec1pattern+1,          30,      sw_vecacc,   200
+%vec1pattern,          32,      sw_vecfadespd,   -15
+%vec1pattern+1,          30,      sw_vecfadeend,   0
+%vec1pattern+1,          32,      sw_vecfadeend,   255
+%vec1pattern+1,          32,      sw_spol,   210
+%vec1pattern+1,          32,      sw_vecacc,   0
+%vec1pattern+1,          32,      sw_vecspd,   100
+%vec1pattern+1,          48,      sw_spol,   810
+%0          ,           0,      sw_vecfadespd,   15
+%0          ,           0,      sw_vecfadeval,   0
+
+%vec1pattern+2,          0,      sw_spol,   610
+%vec1pattern+2,          32,      sw_spol,   410
+%vec1pattern+2,          48,      sw_spol,   110
+
+
+%vec1pattern+3,          0,      sw_vec1,   0
+
+%metapattern,          0,      sw_meta,   1
+%metapattern,          0,      sw_metafadeval,   0
+%metapattern,          0,      sw_metafadeend,   255
+%metapattern,          0,      sw_metafadespd,   5
+%metapattern+1,          0,      sw_metaspd,   1000
+%metapattern+1,          48,      sw_metaud,   1
+%metapattern+2,          0,      sw_meta,   0
+
+
+
+
+/------ LYS -----------------
+%kaswpattern,          0,      sw_ok,   1
+%kaswpattern,          0,      sw_okfadeval,   255
+%kaswpattern,          0,      sw_okfadeend,   255
+%kaswpattern,          0,      sw_okfadespd,   3
+%kaswpattern,          0,      sw_okfadecol,   0
+%kaswpattern,          1,      sw_ok,   0
+
+
+%kaswpattern,          1,        sw_kasw,   1
+%kaswpattern,          0,        sw_kaswflashcol,   255
+%kaswpattern,          0,        sw_kaswfadeval,   0
+%kaswpattern,          0,        sw_kaswfadespd,   3
+%kaswpattern,          0,        sw_kaswfadeend,   255
+%kaswpattern,          0,        sw_kaswr,   51
+%kaswpattern,          0,        sw_kaswg,   31
+%kaswpattern,          0,        sw_kaswb,   -38
+%kaswpattern,          16,        sw_kaswr,   -31
+%kaswpattern,          16,        sw_kaswg,   51
+%kaswpattern,          16,        sw_kaswb,   -18
+%kaswpattern,          32,        sw_kaswr,   -31
+%kaswpattern,          32,        sw_kaswg,   21
+%kaswpattern,          32,        sw_kaswb,   -48
+%kaswpattern,          48,        sw_kaswr,   -31
+%kaswpattern,          48,        sw_kaswg,   41
+%kaswpattern,          48,        sw_kaswb,   -38
+%kaswpattern+0,          63,      sw_okfadecol,   255
+%kaswpattern+0,          63,        sw_kaswfadespd,   -38
+%kaswpattern+0,          63,        sw_kaswfadeend,   255
+%kaswpattern+1,          0,      sw_kasw,   0
+%kaswpattern+1,          0,      sw_ok,   1
+%kaswpattern+1,          0,      sw_okfadeval,   0
+%kaswpattern+1,          0,      sw_okfadeend,   255
+%kaswpattern+1,          0,      sw_okfadespd,   38
+%kaswpattern+1,          1,      sw_okfadecol,   0
+%kaswpattern+1,          1,      sw_okfadeend,   0
+%kaswpattern+1,          1,      sw_okfadespd,   -88
+%kaswpattern+1,          1,      sw_ok,   0
+%kaswpattern+1,          1,      sw_kasw,   1
+%kaswpattern+1,          32,      sw_kaswflashcol,   0
+%kaswpattern+1,          32,        sw_kaswfadespd,   -8
+%kaswpattern+1,          32,        sw_kaswfadeend,   0
+
+
+/------ WE KNOWS HOW TO CODE -----------------
+%kaswpattern+1,          48,      sw_weknows,   1
+%0,          0,        sw_kasw,   0
+%19,          32,      sw_weknows,   0
+
+%19 , 0 , -1 , -1
+.

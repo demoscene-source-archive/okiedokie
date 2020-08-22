@@ -1,0 +1,21 @@
+.ERASE
+
+ccopts= /5r /s /fp5 /onaSmir /s
+
+.cpp.obj
+  wpp386 $(ccopts) $<
+
+.c.obj
+  wcc386 $(ccopts) $<
+
+.asm.obj
+  tasm $(asmopts) $<
+
+soopa.exe: soopa.obj tinystrt.obj tinyheap.obj int386.obj vesavbe.obj affill.obj
+  %write tmp.lnk NAME     $@
+  %write tmp.lnk system   pmodew
+  %write tmp.lnk FILE     { soopa.obj tinystrt.obj tinyheap.obj int386.obj vesavbe.obj affill.obj}
+  %write tmp.lnk OPTION NODEFAULTLIBS
+  wlink @tmp.lnk
+  del tmp.lnk
+

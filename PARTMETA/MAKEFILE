@@ -1,0 +1,25 @@
+.ERASE
+
+ccopts= /oneatx /fp5 /zp8 /wcd301 /w=3 /wcd=202 /d3
+
+EXEFILE = fx.exe
+objects1 = fx.obj meta.obj \engine\keyframe.obj \demolib\quat.obj \demolib\qspline.obj \demolib\spline.obj \demolib\bilerp.obj \engine\engine.obj \demolib\matrix.obj \engine\salloc.obj \engine\structs.obj \demolib\komms.obj \demolib\vesavbe.obj \demolib\col256.obj \engine\berror.obj \demolib\filer.obj \engine\dloader.obj \engine\file3ds.obj \demolib\convert.obj \demolib\clockcyc.obj \engine\th.obj \demolib\pcx.obj
+
+.c.obj
+  wcc386 $(ccopts) $<
+
+.asm.obj
+  tasm -m4 -zi $<
+
+$(EXEFILE): $objects1 test.lnk
+  wlink @test.lnk
+  del test.lnk
+
+test.lnk:
+  %write test.lnk OPTION   map , eliminate debug all
+  %write test.lnk NAME	   $(EXEFILE)
+  %write test.lnk system   dos4g
+  %write test.lnk FILE	   {$objects1}
+
+pcx.obj
+  copy th\pcx.obj pcx.obj

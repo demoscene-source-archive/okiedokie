@@ -1,0 +1,94 @@
+.ERASE
+
+MIDASLIB = midas.lib
+MIDASINCS = include
+
+ccopts= /oneatx /fp5 /zp8 -bt=dos -i$(MIDASINCS) /w=3 /wcd=202
+
+asmopts= -ml -m4 -zi
+
+EXEFILE = demo.exe
+objects1 = partmeta\partmeta.obj partmeta\meta.obj zb\zoomblur.obj zb\zbasm.obj peder\soopa.obj peder\affill.obj partpuls\puls.obj partcylt\cyl.obj partcylt\cylasm.obj partcylt\cylcalc.obj partcylt\mtrace.obj partkasw\kaswasm.obj partkasw\kasw.obj partvect\vector.obj main.obj demolib\pcx.obj demolib\layerasm.obj demolib\layer.obj demolib\mdemo.obj demolib\bilerp.obj demolib\matrix.obj demolib\vesavbe.obj demolib\col256.obj demolib\convert.obj demolib\komms.obj demolib\engine.obj demolib\dloader.obj demolib\keyframe.obj demolib\filer.obj demolib\file3ds.obj demolib\spline.obj demolib\salloc.obj demolib\quat.obj demolib\qspline.obj demolib\th.obj demolib\berror.obj demolib\clockcyc.obj demolib\script.obj demolib\lbm.obj
+
+.c.obj
+  wcc386 $(ccopts) $<
+
+.asm.obj
+  tasm $(asmopts) $<
+
+$(EXEFILE): $objects1 test.lnk
+  wlink @test.lnk
+  del test.lnk
+
+test.lnk:
+  %write test.lnk OPTION   map , eliminate debug all
+  %write test.lnk NAME	   $(EXEFILE)
+  %write test.lnk system   dos4g
+  %write test.lnk FILE	   {$objects1}
+  %write test.lnk library  $(MIDASLIB)
+  %write test.lnk option caseexact
+pcx.obj
+  copy th\pcx.obj pcx.obj
+
+partvect\vector.obj: partvect\vector.c
+  cd partvect
+  wcc386 vector.c $(ccopts)
+  cd ..
+
+partkasw\kasw.obj: partkasw\kasw.c
+  cd partkasw
+  wcc386 kasw.c $(ccopts)
+  cd ..
+
+partkasw\kaswasm.obj: partkasw\kaswasm.asm
+  cd partkasw
+  tasm $(asmopts) kaswasm.asm
+  cd ..
+
+partcylt\cyl.obj: partcylt\cyl.c
+  cd partcylt
+  wcc386 cyl.c $(ccopts)
+  cd ..
+
+partcylt\mtrace.obj: partcylt\mtrace.c
+  cd partcylt
+  wcc386 mtrace.c $(ccopts)
+  cd ..
+
+partcylt\cylasm.obj: partcylt\cylasm.asm
+  cd partcylt
+  tasm $(asmopts) cylasm.asm
+  cd ..
+
+partcylt\cylcalc.obj: partcylt\cylcalc.asm
+  cd partcylt
+  tasm $(asmopts) cylcalc.asm
+  cd ..
+
+partpuls\puls.obj: partpuls\puls.c
+  cd partpuls
+  wcc386 puls.c $(ccopts)
+  cd ..
+
+partmeta\partmeta.obj: partmeta\partmeta.c
+  cd partmeta
+  wcc386 partmeta.c $(ccopts)
+  cd ..
+
+partmeta\meta.obj: partmeta\meta.c
+  cd partmeta
+  wcc386 meta.c $(ccopts)
+  cd ..
+
+part\part.obj: part\part.c
+  cd part
+  wcc386 part.c $(ccopts)
+  cd ..
+
+peder\soopa.obj: peder\soopa.c
+  cd peder
+  wcc386 soopa.c $(ccopts)
+  cd ..
+
+
+

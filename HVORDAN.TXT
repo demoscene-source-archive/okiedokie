@@ -1,0 +1,12 @@
+For at compilere okiedokie skal bruges:
+watcom 11.0
+tasm
+pmwlite
+pkzip
+
+For at compilere startes make.bat.
+Demoen kan nu k›re i ikke linket version.
+K›r den en gang. Den har nu opbygget en fil indeholdende filerne den loader.
+Ret i main, s† LINK definers. K›r makefina.bat. Den f‘rdige zipfil ligger
+nu i test\.
+

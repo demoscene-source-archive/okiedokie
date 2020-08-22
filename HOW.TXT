@@ -1,0 +1,12 @@
+To compile the okiedokie demo you need:
+watcom 11.0
+tasm
+(pmwlite)
+(pkzip)
+
+Run make.bat
+The demo is now compiled in non-linked version.
+Run it.
+The demo has now build a file containing the datafiles.
+Modify main.c, by deleting the two first characters (LINK is defined).
+Run makefina.bat. The final zipfile is in test/.
